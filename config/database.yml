@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: capistrano_test_production
-  username: capistrano_test
+  database: capistranotest_production
+  username: rails
   password: <%= ENV['CAPISTRANO_TEST_DATABASE_PASSWORD'] %>
