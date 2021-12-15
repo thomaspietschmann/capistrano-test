@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.3'
+ruby '3.0.1'
 gem 'dotenv-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
@@ -47,6 +47,8 @@ gem 'capistrano-rbenv',     require: false
 gem 'capistrano-rails',   require: false
 gem 'capistrano-bundler', require: false
 gem 'capistrano3-puma',   require: false
+gem 'capistrano-chruby', require: false
+gem 'capistrano-rbenv-install'
 end
 
 group :test do

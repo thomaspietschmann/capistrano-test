@@ -5,11 +5,11 @@ require "capistrano/deploy"
 require "capistrano/rails"
 require "capistrano/bundler"
 require "capistrano/rbenv"
+require 'capistrano/rbenv_install'
+# require "capistrano/chruby"
 require 'capistrano/puma'
 install_plugin Capistrano::Puma
 install_plugin Capistrano::Puma::Systemd
-
-
 
 # Include default deployment tasks
 

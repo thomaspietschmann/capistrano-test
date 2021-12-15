@@ -2,14 +2,17 @@
 lock "~> 3.16.0"
 
 set :user, 'rails'
+# set :deploy_user, 'rails'
 server '167.172.104.183', port: 22, roles: [:web, :app, :db], primary: true
 
 set :rbenv_type, :user # or :system, or :fullstaq (for Fullstaq Ruby), depends on your rbenv setup
-set :rbenv_ruby, '3.0.3'
+set :rbenv_ruby, '3.0.1'
+# set :chruby_ruby, 'ruby-3.0.2'
 
 # in case you want to set ruby version from the file:
 # set :rbenv_ruby, File.read('.ruby-version').strip
 
+set :rbenv_path, "~/.rbenv"
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 set :rbenv_roles, :all # default value
@@ -84,7 +87,7 @@ namespace :deploy do
   before :starting,     :check_revision
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
-  after  :finishing,    :restart
+  # after  :finishing,    :restart
 end
 
 # ps aux | grep puma    # Get puma pid
