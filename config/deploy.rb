@@ -6,7 +6,7 @@ set :user, 'rails'
 server '167.172.104.183', port: 22, roles: [:web, :app, :db], primary: true
 
 set :rbenv_type, :user # or :system, or :fullstaq (for Fullstaq Ruby), depends on your rbenv setup
-set :rbenv_ruby, '2.7.4'
+set :rbenv_ruby, '3.0.3'
 # set :chruby_ruby, 'ruby-3.0.2'
 
 # in case you want to set ruby version from the file:
