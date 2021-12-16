@@ -24,7 +24,12 @@ set :repo_url, "git@github.com:thomaspietschmann/capistrano-test.git"
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 
-set :pty,             true
+# set :pty,             true
+
+set :nvm_type, :user # or :system, depends on your nvm setup
+set :nvm_node, 'v16.13.1'
+set :nvm_map_bins, %w{node npm yarn}
+
 set :use_sudo,        false
 set :stage,           :production
 set :deploy_via,      :remote_cache
