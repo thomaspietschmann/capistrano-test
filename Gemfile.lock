@@ -79,8 +79,6 @@ GEM
     capistrano-chruby (0.1.2)
       capistrano (~> 3.0)
       sshkit (~> 1.3)
-    capistrano-nvm (0.0.7)
-      capistrano (~> 3.1)
     capistrano-rails (1.6.1)
       capistrano (~> 3.1)
       capistrano-bundler (>= 1.1, < 3)
@@ -246,7 +244,6 @@ DEPENDENCIES
   capistrano
   capistrano-bundler
   capistrano-chruby
-  capistrano-nvm
   capistrano-rails
   capistrano-rbenv
   capistrano-rbenv-install

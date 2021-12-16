@@ -50,7 +50,6 @@ group :development do
   gem 'capistrano3-puma',   require: false
   gem 'capistrano-chruby', require: false
   gem 'capistrano-rbenv-install', require: false
-  gem 'capistrano-nvm', require: false
 end
 
 group :test do
