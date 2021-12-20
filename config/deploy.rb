@@ -46,6 +46,18 @@ set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh
 
 append :linked_files, "config/master.key", ".env"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "public/uploads", "tmp/sockets"
+
+namespace :setup do
+  desc 'Copy env keys'
+  task :copy_keys do
+    on roles(:app) do
+      execute "mkdir -p #{shared_path}/config"
+      upload! "#{Dir.pwd}/config/master.key", "#{shared_path}/config/master.key"
+      upload! "#{Dir.pwd}/.env", "#{shared_path}/.env"
+    end
+  end
+end
+
 #
 # namespace :puma do
 #   desc 'Create Directories for Puma Pids and Socket'
