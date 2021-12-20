@@ -7,9 +7,9 @@ require "capistrano/bundler"
 require "capistrano/rbenv"
 require 'capistrano/rbenv_install'
 # require "capistrano/chruby"
-require 'capistrano/puma'
-install_plugin Capistrano::Puma
-install_plugin Capistrano::Puma::Systemd
+# require 'capistrano/puma'
+# install_plugin Capistrano::Puma
+# install_plugin Capistrano::Puma::Systemd
 
 # Include default deployment tasks
 
@@ -36,12 +36,11 @@ install_plugin Capistrano::SCM::Git
 #   https://github.com/capistrano/passenger
 #
 # require "capistrano/rvm"
-# require "capistrano/rbenv"
 # require "capistrano/chruby"
 # require "capistrano/bundler"
 # require "capistrano/rails/assets"
 # require "capistrano/rails/migrations"
-# require "capistrano/passenger"
+require "capistrano/passenger"
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
